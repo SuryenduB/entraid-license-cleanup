@@ -8,6 +8,6 @@ inputs:
     required: false
     default: "c2273bd0-dff7-4215-9ef5-2c7bcfb06425"
 runs: 
-  using: "pwsh"
+  using: "node12"
   main: "M365-License-Checker.ps1"
   args: ["-licenseId ${{ inputs.license_id }}"]
