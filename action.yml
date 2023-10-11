@@ -1,0 +1,13 @@
+#action.yml
+
+name: 'GitHub Action for M365 License Cleanup Report'
+description: 'This action will create a report  M365 licenses from users that has not used in last 30 days.'
+inputs:
+  license_id:
+    description: 'M365 License ID'
+    required: false
+    default: "c2273bd0-dff7-4215-9ef5-2c7bcfb06425"
+runs: 
+  using: "pwsh"
+  main: "M365-License-Checker.ps1"
+  args: ["-licenseId ${{ inputs.license_id }}"]
