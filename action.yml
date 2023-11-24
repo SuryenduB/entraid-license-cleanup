@@ -15,6 +15,7 @@ runs:
   - id: cd
     run: |
       cd .\${{ github.action_path }}
+    shell: PowerShell
   - id: license-report
     run: |
       .\${{ github.action_path }}\M365-License-Checker.ps1 -tenant_id ${{ inputs.tenant_id }} >> $GITHUB_OUTPUT
