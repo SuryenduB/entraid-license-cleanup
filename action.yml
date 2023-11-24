@@ -14,7 +14,7 @@ runs:
   steps:
   - id: cd
     run: |
-      cd .\${{ github.action_path }}
+      cd ${{ github.action_path }} && ls -a
     shell: PowerShell
   - id: license-report
     run: |
