@@ -15,6 +15,7 @@ runs:
   - id:  license-report
     run: |
       cd ${{ github.action_path }} 
-      .\M365-License-Checker.ps1 $licenseId ${{inputs.license_id}}
+      Write-Output ${{inputs.license_id}}
+      .\M365-License-Checker.ps1 -licenseId ${{inputs.license_id}}
     shell: PowerShell
 
