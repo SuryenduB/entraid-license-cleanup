@@ -3,11 +3,16 @@
 name: 'GitHub Action for M365 License Cleanup Report'
 description: 'This action will create a report  M365 licenses from users that has not used in last 30 days.'
 inputs:
-  license_id:
-    description: 'M365 License ID'
-    required: false
-    default: "c2273bd0-dff7-4215-9ef5-2c7bcfb06425"
+  tenant_id: #input id
+    description: 'Entra Tenant ID'
+    required: true
+    default: ''
+  email_recipient: #input id
+    description: 'Email of the Recipient of the report'
 runs: 
-  using: "node12"
-  main: "M365-License-Checker.ps1"
-  args: ["-licenseId ${{ inputs.license_id }}"]
+  using: "Composite"
+  steps:
+    id: license-report
+    run: |
+      .\${{ github.action_path }}\M365-License-Checker.ps1 -tenant_id ${{ inputs.tenant_id }} >> $GITHUB_OUTPUT
+    shell: PowerShell
