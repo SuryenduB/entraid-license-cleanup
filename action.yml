@@ -3,8 +3,8 @@
 name: 'GitHub Action for M365 License Cleanup Report'
 description: 'This action will create a report  M365 licenses from users that has not used in last 30 days.'
 inputs:
-  tenant_id: #input id
-    description: 'Entra Tenant ID'
+  license_id: #input id
+    description: 'Entra License ID'
     required: true
     default: ''
   email_recipient: #input id
