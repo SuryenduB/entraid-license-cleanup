@@ -12,7 +12,7 @@ inputs:
 runs: 
   using: "Composite"
   steps:
-    id: license-report
+  - id: license-report
     run: |
       .\${{ github.action_path }}\M365-License-Checker.ps1 -tenant_id ${{ inputs.tenant_id }} >> $GITHUB_OUTPUT
     shell: PowerShell
